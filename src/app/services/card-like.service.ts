@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CardLikeService {
 
-  private apiUrl = 'http://localhost:4000/api/like';
+  private apiUrl = `${environment.baseUrl}/api/like`;
 
   constructor(private http: HttpClient) { }
 
