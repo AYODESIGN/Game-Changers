@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CardRatingService {
 
-  private apiUrl = 'http://localhost:4000/api/rating'; // Update the API URL for ratings
+  private apiUrl = `${environment.baseUrl}/api/rating`; // Update the API URL for ratings
 
   constructor(private http: HttpClient) { }
 
