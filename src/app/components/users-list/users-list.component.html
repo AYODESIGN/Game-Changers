@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table margin-top">
+       <tr>
+       <th>Profile Photo</th>
+       <th>First Name</th>
+       <th>Last Name</th>
+       <th>Ratings Count</th>
+       <th>likes Count</th>
+       <th>Actions</th>
+   
+       </tr>
+       <tr *ngFor=" let user of users">
+          <td><img [src]="user.img" width="50px" alt=""></td>
+          <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+
+          <td>{{ user.ratingCount }}</td>
+          <td>{{ user.likeCount }}</td>
+          <td>
+           <button class="btn btn-danger mr-2" (click)="deleteUser(user._id)">Delete</button>
+          </td>
+          
+       </tr>
+       </table>
+ </div>

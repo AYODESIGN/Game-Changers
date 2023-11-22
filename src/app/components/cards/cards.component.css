@@ -1,0 +1,263 @@
+/* Apply styles to the filters only */
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+  .text-green{
+    color: green;
+  }
+  .text-red{
+    color: red;
+  }
+
+  .btn-margin{
+    margin: 1rem;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 158px;
+    z-index: 120;
+    background-color: hsl(252, 24%, 4%);;
+    opacity: 0.9;
+}
+
+.sticky-1 {
+  position: sticky;
+  top: 192.4px;
+  z-index: 100;
+  background-color: hsl(252, 24%, 4%);;
+  opacity: 0.9;
+}
+  
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* or any other appropriate value for horizontal alignment */
+  align-items: center; /* to center vertically */
+  align-content:flex-start
+}
+
+
+.margined{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-margin{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.red-heart {
+  color: red; 
+}
+
+
+
+.star-rating {
+  white-space: nowrap;
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+.fa-star {
+  color: #ccc; /* Default star color */
+  cursor: pointer;
+}
+
+.fa-star.active {
+  color: #f0b301; /* Active star color */
+}
+
+
+.roll-in-blurred-left {
+	-webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.red-heart-icon {
+  color: red; /* Set the color to red or any color you prefer */
+}
+
+
+/* Make the dropdown container hidden by default */
+.filter-container .filter-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* or any other appropriate value for horizontal alignment */
+  align-items: center; /* to center vertically */
+  align-content:flex-start
+  
+}
+
+/* Show the dropdown container when the filter-container is hovered */
+.filter-container:hover .filter-dropdown {
+  display: block;
+  flex-wrap: wrap;
+}
+
+.text-black{
+  color: black;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.btn-position{
+
+  margin: 1rem 1rem 1rem 1rem;
+
+}
+
+.heart-spacing{
+  letter-spacing: 0.5rem;
+ 
+}
+
+/* Style the filter dropdown */
+.filter-dropdown {
+  display: none;
+  /* Add more styling as needed */
+}
+
+/* Show the filter dropdown when the 'show-filters' class is present */
+.show-filters .filter-dropdown {
+  display: flex !important; /* Important to override inline styles */
+}
+
+.sub-text{
+  color: #969696;
+}
+
+
+/* check box style */
+
+
+.d-flex-check-b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+}
+
+.checkbox-wrapper-47 {
+  margin-bottom: 10px; /* Add margin for better spacing between rows */
+}
+
+.checkbox-wrapper-47 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper-47 label {
+  position: relative;
+  width: 3em; /* Adjust the width based on your design */
+  padding-left: 2em;
+  padding-right: 1em;
+  margin-left: 1em;
+  line-height: 2;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.checkbox-wrapper-47 label:before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px solid #9098A9;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.checkbox-wrapper-47 input[type=checkbox]:checked + label {
+  padding-left: 1em;
+  color: #0f5229;
+}
+
+.checkbox-wrapper-47 input[type=checkbox]:checked + label:before {
+  top: 0;
+  width: 100%;
+  height: 2em;
+  background: #b7e6c9;
+  border-color: #2cbc63;
+}
+
+.checkbox-wrapper-47 label,
+.checkbox-wrapper-47 label::before {
+  transition: 0.25s all ease;
+}
+
+.circle-border{
+  border: 2px solid var(--white);
+  padding: var(--padding, 4px 10px);
+  border-radius: 50px;
+}
+.text-white{
+  color: white;
+  font-weight: bold;
+}
+
+/* .edit-btn{
+  position: relative;
+  left: 211px;
+  bottom: 562px;
+  
+} */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd000;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+

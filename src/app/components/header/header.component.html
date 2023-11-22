@@ -1,0 +1,33 @@
+<header class="header">
+  <nav>
+    <div class="logo">
+      <a routerLink=""><img src="/assets/images/GCTT-Logo.png" width="300px" alt="">
+      </a>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="select-collection">Collection</a></li>
+      <li><a *ngIf="isLoggedIn() && admin" routerLink="add-card"><i class="fa-solid fa-circle-plus fa-flip"></i>Add Card</a></li>
+      <li><a *ngIf="isLoggedIn() && admin" routerLink="users-list"><i class="fa-solid fa-users"></i></a></li>
+      <li><a *ngIf="isLoggedIn()" routerLink="favorite-cards"><i class="fa-sharp fa-solid fa-heart"></i></a></li>
+      <li><a *ngIf="!isLoggedIn()" routerLink="signup/user">Register</a></li>
+      <li><a *ngIf="!isLoggedIn()" routerLink="login">Connect</a></li>
+      <li><a style="cursor: pointer;" *ngIf="isLoggedIn()" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+      <li *ngIf="isLoggedIn()" class="profile-li">
+        <a style="cursor: pointer;" (click)="toggleProfileDropdown()">
+          <img [src]="decodedToken.img" alt="User Profile" style="width: 50px; height: 50px; border-radius: 50%;">
+          
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Add a dropdown with ngIf -->
+<div *ngIf="showDropdown" class="profile-dropdown">
+  <!-- Add your profile editing options here -->
+  <span class="text-sm" routerLink="">Edit Profile</span>
+  <!-- ... other profile editing options ... -->
+</div>
