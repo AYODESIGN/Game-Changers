@@ -1,0 +1,210 @@
+
+
+
+    
+        <div class="container text-center marginTop">
+            <h2 class="m-auto">{{title}}</h2>
+            <p *ngIf="admin">Registration for the adminstration only</p>
+
+      </div>
+     
+
+
+<div class="site-section">
+  <div class="container">
+
+
+      <div class="row justify-content-center">
+          <section id="form-details">
+
+          <form [formGroup]="signupForm" class="col-md-5 display-flex">
+              <div class="row">
+          
+              <!--first signup block -->
+
+
+                <!-- name -->
+                <div  class="col-size">
+                  <div  class=" form-group">
+                    <label for="userName">Username</label>
+                    <input formControlName="username" type="text" id="username" class=" input-size newsletter-input form-control form-control-lg">
+                </div>
+                <div class="m-auto" *ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].touched || signupForm.controls['username'].dirty)">
+                  <div *ngIf="signupForm.controls['username'].errors.required">
+                    Username is required.
+                  </div>
+                  <div *ngIf="signupForm.controls['username'].errors.minlength">
+                    Username must have at least 3 characters.
+                  </div>
+                </div>
+                </div>
+                  
+             
+                  <!-- email -->
+                  <div *ngIf="!editMode"  class="col-size">
+
+                  <div class=" form-group">
+                      <label for="email">Email</label>
+                      <input formControlName="email" type="email" id="email" class="input-size  newsletter-input form-control form-control-lg">
+                  </div>
+                  <div class="m-auto" *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                    <div *ngIf="signupForm.controls['email'].errors.required">
+                      Email is required.
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].errors.email">
+                       Invalid Email.
+                    </div>
+                  </div>
+                  </div>
+
+               
+                  
+
+               <!-- open Sea -->
+               <div class="col-size">
+                <div class="form-group">
+                    <label for="openSea" style="display: inline-block;">OpenSea Username<span class="green-text" style="display: inline;"> (Optional)</span></label>
+                    <input formControlName="openSea" type="text" id="openSea" class="input-size newsletter-input form-control form-control-lg">
+                </div>
+            </div>
+            
+
+                 <!-- Wallet  -->
+                <div class="col-size">
+
+                  <div class="col-size">
+                    <div class="form-group">
+                        <label for="wallet" style="display: inline-block;">Wallet Address<span class="green-text" style="display: inline;"> (Optional)</span></label>
+                        <input formControlName="wallet" type="text" id="wallet" class="input-size newsletter-input form-control form-control-lg">
+                    </div>
+                </div>
+                </div>
+
+              </div>
+
+           
+
+              <!--second signup block -->
+              <div>
+              
+                          <!-- address -->
+          <div  class="col-size">
+            <div class=" form-group">
+              <label for="address">Address</label>
+              <input formControlName="address" type="text" id="address" class="  input-size newsletter-input form-control form-control-lg">
+          </div>
+          <div class="m-auto" *ngIf="signupForm.controls['address'].invalid && (signupForm.controls['address'].touched || signupForm.controls['address'].dirty)">
+            <div *ngIf="signupForm.controls['address'].errors.required">
+              Address is required.
+            </div>
+            <div *ngIf="signupForm.controls['address'].errors.minlength">
+                Address must have at least 5 characters.
+            </div>
+          </div>
+              </div>
+                  <!-- sureName -->
+                 
+                  <!-- <div class="col-size">
+                  <div class="col-md-6 form-group">
+                    <label for="username">Surename</label>
+                    <input formControlName="lastName" type="text" id="username" class=" input-size newsletter-input form-control form-control-lg">
+                </div>
+                <div class="m-auto" *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                    <div *ngIf="signupForm.controls['lastName'].errors.required">
+                      Last Name is required.
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].errors.minlength">
+                      Last Name must have at least 3 characters.
+                    </div>
+                  </div>
+                  </div> -->
+                    <!-- password -->
+                    <div *ngIf="!editMode" class="col-size">
+
+                    <div class=" form-group">
+                      
+                      <label for="pword">Password</label>
+                      <input formControlName="pwd" type="password" id="pword" class="input-size newsletter-input form-control form-control-lg">
+                  </div>
+                  <div class="m-auto" *ngIf="signupForm.controls['pwd'].invalid && (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].dirty)">
+                    <div *ngIf="signupForm.controls['pwd'].errors.required">
+                      Password is required.
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.minlength">
+                       Password must have at least 6 characters.
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.maxlength">
+                       Password must have at most 12 characters.
+                    </div>
+                  </div>
+                    </div>
+                   
+                     
+               <!-- twitter -->
+               <div class="col-size">
+
+                <div class="col-size">
+                  <div class="form-group">
+                      <label for="twitter" style="display: inline-block;">Twitter Handle 'X'<span class="green-text" style="display: inline;"> (Optional)</span></label>
+                      <input formControlName="twitter" type="text" id="twitter" class="input-size newsletter-input form-control form-control-lg">
+                  </div>
+              </div>
+              </div>
+              
+
+                <!-- phone -->
+                <div class="col-size">
+                  <div class="form-group">
+                    <label for="phone">Phone Number<span class="green-text" style="display: inline;"> (Optional)</span></label>
+                    <input formControlName="phone" type="text" id="phone" class="input-size  newsletter-input form-control form-control-lg">
+                </div>
+                <div class="m-auto" *ngIf="signupForm.controls['phone'].invalid && (signupForm.controls['phone'].touched || signupForm.controls['phone'].dirty)">
+                    <div *ngIf="signupForm.controls['phone'].errors.required">
+                      Phone is required.
+                    </div>
+                    <div *ngIf="signupForm.controls['phone'].errors.pattern">
+                        Phone must be a number.
+                      </div>
+                    <div *ngIf="signupForm.controls['phone'].errors.minlength">
+                        Phone must have at least 8 digits.
+                    </div>
+                  </div>
+                         </div>
+                       <!-- phone end -->
+            </div>
+
+
+
+                
+              <!-- third signup Block -->
+            
+
+                <!-- img input -->
+                <div>
+                  <div class="form-group">
+                    <input type="file"  class="form-control" style="visibility: hidden;" #filePicker (change)='onImageSelected($event)'>
+                  </div> 
+                  <div  class="text-center margin-bottom">
+                    <button class="btn btn-primary" (click)="filePicker.click()">Select Profile Photo</button>
+                  </div>
+                  <div class=" text-center mb-2">
+                    <img [src]="imagePreview" alt="" class="padding-b" width="200px" style="margin-bottom: 2rem"> 
+                  </div>
+                  <div class="row text-center margin-bottom">
+                      <div *ngIf="!editMode" class="col-12">
+                        <button (click)="signup()" [disabled]="signupForm.invalid" type="submit" value="Register" style="width: 180px; display: flex; justify-content: center; align-items: center;" class="btn">Register</button>
+                      </div>
+                      <div *ngIf="editMode" class="col-12">
+                        <button (click)="edit()" [disabled]="signupForm.invalid" type="submit" value="Register" style="width: 180px; display: flex; justify-content: center; align-items: center;" class="btn">Edit Profile</button>
+                      </div>
+                  </div>
+                </div>
+          
+          </form>
+          </section>
+      </div>
+      
+
+    
+  </div>
+</div>

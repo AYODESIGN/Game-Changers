@@ -1,0 +1,10 @@
+.d-flex {
+    display: flex;
+    flex-direction: row; /* Default value */
+    justify-content: space-around;
+
+  }
+  
+  .m-pointer{
+    cursor: pointer;
+  }

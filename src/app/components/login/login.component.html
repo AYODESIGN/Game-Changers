@@ -1,0 +1,42 @@
+<div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm">
+      <div  class="user-box mb-2">
+        <input formControlName="email" type="email" name="" required="">
+        <label>Email</label>
+        <div class="m-auto" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+          <div *ngIf="loginForm.controls['email'].errors.required">
+            <span class="erroring">Email is required.</span>
+          </div>
+          <div *ngIf="loginForm.controls['email'].errors.email">
+            <span class="erroring">Invalid Email.</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="user-box margin-t">
+        <input type="password" formControlName="pwd" name="" required="">
+        <label>Password</label>
+        <div class="m-auto" *ngIf="loginForm.controls['pwd'].invalid && (loginForm.controls['pwd'].touched || loginForm.controls['pwd'].dirty)">
+          <div *ngIf="loginForm.controls['pwd'].errors.required">
+           <span class="erroring">Password is required.</span> 
+          </div>
+          <div *ngIf="loginForm.controls['pwd'].errors.minlength">
+             <span class="erroring">Password must have at least 6 characters.</span>
+          </div>
+          <div *ngIf="loginForm.controls['pwd'].errors.maxlength">
+            <span class="erroring">Password must have at most 12 characters.</span>
+          </div>
+        </div>
+      </div>
+      <a>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        <input (click)="login()" [disabled]="loginForm.invalid" type="submit" value="Login" class="gold-text hover-black">
+        <span class="erroring">{{error}}</span>
+      </a>
+    </form>
+  </div>

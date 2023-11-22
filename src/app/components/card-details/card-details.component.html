@@ -1,0 +1,83 @@
+<div class="margined d-flex">
+  <div class="wrap">
+    <div class="side-a">
+      <img class="img-width"[src]="card.img" alt="Side A" />
+    </div>
+    <div class="side-b">
+      <img
+      class="img-width"
+        src="{{cardBack}}"
+        alt="Side B"
+      />
+    </div>
+  </div>
+
+  <div class="margined-top profile-details">
+    <p class="section-subtitle">PROFILE</p>
+
+    <span class="golden">{{ card.name }}</span>
+    <!-- Add the description Lorem Ipsum text below -->
+    <button  (click)="toggleDescription()" class="btn toggle-button margin-p">
+      {{ showDescription ? 'Hide Profile' : 'Show Profile' }}
+    </button>
+
+    <p class="" *ngIf="showDescription">
+      {{card.description}}
+    </p>
+    <p *ngIf="original" class="section-subtitle">Sport</p>
+    <p *ngIf="roh"class="section-subtitle">Franchise</p>
+    <p *ngIf="stars"class="section-subtitle">{{actor}}</p>
+
+    <span *ngIf="original || roh" class="golden">{{ card.main }}</span>
+    <span *ngIf="stars" class="golden">{{ card.sub }}</span>
+
+    <p *ngIf="original" class="section-subtitle">Association</p>
+    <p *ngIf="roh"class="section-subtitle">Installment</p>
+    <p *ngIf="stars"class="section-subtitle">Movie / Serie</p>
+
+    <span *ngIf="original || roh" class="golden">{{ card.sub }}</span>
+    <span *ngIf="stars" class="golden">{{ card.main }}</span>
+  </div>
+  <div class="marign-top max-width">
+    <p class="section-subtitle">Stats</p>
+    <label for="">Top</label>
+    <app-progress-bar
+      [progress]="topValue"
+      [color]="topColor"
+    ></app-progress-bar>
+    <label for="">Bottom</label>
+    <app-progress-bar
+      [progress]="bottomValue"
+      [color]="bottomColor"
+    ></app-progress-bar>
+  
+    <label for="">Left</label>
+    <app-progress-bar
+      [progress]="leftValue"
+      [color]="leftColor"
+    ></app-progress-bar>
+    <label for="">Right</label>
+    <app-progress-bar
+      [progress]="rightValue"
+      [color]="rightColor"
+    ></app-progress-bar>
+
+    <span class="circle">
+      <circle-progress
+        [percent]="(overAll / 33) * 100"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#5D3FD3'"
+        [innerStrokeColor]="'#AA336A'"
+        [animation]="true"
+        [animationDuration]="700"
+        [subtitle]="'Total Points'"
+        [title]="overAll"
+        [titleFontSize]="'40'"
+        [units]="''"
+      ></circle-progress>
+    </span>
+  </div>
+</div>
+  

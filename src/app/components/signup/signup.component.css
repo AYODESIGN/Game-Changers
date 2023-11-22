@@ -1,0 +1,65 @@
+ /* @import "~bootstrap/dist/css/bootstrap.min.css";   */
+
+.margin-bottom{
+    margin-bottom: 10px;
+}
+
+.marginTop{
+    margin-top: 50px;
+}
+.col-size{
+    max-height: 10rem;
+    min-height: 10rem
+}
+
+.container {
+    max-width: 1180px;
+    width: 100%;
+    margin-inline: auto;
+    margin-right: 108px;
+}
+
+.display-flex{
+    display: flex ;
+    justify-content: flex-start;
+    gap: 4rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.green-text{
+    color: green;
+    font-size: 10px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .col-size{
+        max-height: 10rem;
+        min-height: 10rem;
+        /* min-width: min-content; */
+     
+    }
+    
+.input-size{
+    max-width: 180px;
+}
+
+.btn-register {
+    margin-left: 5rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--white);
+    font-weight: var(--fw-700);
+    border: 2px solid var(--white);
+    padding: var(--padding, 4px 10px);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.padding-b{
+    padding-bottom: 1rem
+}
+
+}
