@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CardServiceService {
 
-  private apiUrl = 'http://localhost:4000/api/card';
-
-
+  private apiUrl = `${environment.baseUrl}/api/card`
   constructor(private http: HttpClient) { }
 
   addcard(card: any, img: File): Observable<any> {
