@@ -29,7 +29,7 @@ body {
 }
 
 .wrap {
-	transition: -webkit-transform 1s ease-in;
+	transition: transform 1s ease-in;
 	-webkit-transform-style: preserve-3d;
 }
 
