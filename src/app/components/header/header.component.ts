@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import jwt_decode from 'jwt-decode';
 
 @Component({
