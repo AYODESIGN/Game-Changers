@@ -35,7 +35,7 @@ const sessionConfig = require('./config/session');
 
 
 
-const DB_URI = process.env.MONGO_URL;
+const DB_URI = 'mongodb+srv://ayoubcj:ayoub92@cluster0.wdlezms.mongodb.net/';
 
 mongoose.connect(DB_URI, {
   useNewUrlParser: true,

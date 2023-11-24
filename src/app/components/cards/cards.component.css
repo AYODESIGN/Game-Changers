@@ -1,4 +1,4 @@
-/* Apply styles to the filters only */
+
 .filter-container {
   display: flex;
   flex-direction: row;
@@ -257,6 +257,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
 
 
 

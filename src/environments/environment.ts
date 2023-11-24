@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl:'https://game-changer-8v8f.onrender.com'
-  // baseUrl:'http://localhost:4000'
+  // baseUrl:'https://game-changer-8v8f.onrender.com'
+  baseUrl:'http://localhost:4000'
+  
 };
 
 /*
