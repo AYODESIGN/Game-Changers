@@ -2,7 +2,7 @@ import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { CardLikeService } from 'src/app/services/card-like.service';
 import { CardRatingService } from 'src/app/services/card-rating.service';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 
 @Component({
@@ -55,28 +55,53 @@ console.log(this.ratings)
 
 
 
-deleteUser(id) {
-  swal({
-    title: 'Deleting User Confirmation',
-    text: 'Are you sure you want to delete this user?',
-    icon: 'warning',
-    buttons: ['Cancel', 'Yes, Delete'],
-    dangerMode: true,
-  }).then((willDelete) => {
-    if (willDelete) {
-      // User clicked "Yes, Delete"
-      this.userService.deleteUserById(id).subscribe((response) => {
+// deleteUser(id) {
+//   swal({
+//     title: 'Deleting User Confirmation',
+//     text: 'Are you sure you want to delete this user?',
+//     icon: 'warning',
+//     buttons: ['Cancel', 'Yes, Delete'],
+//     dangerMode: true,
+//   }).then((willDelete) => {
+//     if (willDelete) {
+//       // User clicked "Yes, Delete"
+//       this.userService.deleteUserById(id).subscribe((response) => {
+//         console.log(response);
+//         // Optionally show another SweetAlert for success
+//         swal('Success', 'User deleted successfully', 'success');
+//       });
+//     } else {
+//       // User clicked "Cancel" or closed the alert
+//       swal('Cancelled', 'User was not deleted', 'error');
+//     }
+//   });
+//   this.getAllUsers()
+// }
+
+  deleteUser(id) {
+  const willDelete = window.confirm('Are you sure you want to delete this user?');
+
+  if (willDelete) {
+    // User clicked "Yes, Delete"
+    this.userService.deleteUserById(id).subscribe(
+      (response) => {
         console.log(response);
-        // Optionally show another SweetAlert for success
-        swal('Success', 'User deleted successfully', 'success');
-      });
-    } else {
-      // User clicked "Cancel" or closed the alert
-      swal('Cancelled', 'User was not deleted', 'error');
-    }
-  });
-  this.getAllUsers()
+        // Use standard alert for success message
+        window.alert('User deleted successfully');
+        this.getAllUsers();
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+        // Use standard alert for error message
+        window.alert('An error occurred while deleting the user.');
+      }
+    );
+  } else {
+    // User clicked "Cancel" or closed the confirmation
+    // No need to do anything here as the user decided not to delete
+  }
 }
+
 
 calculateRatingCounts() {
   if (this.users && this.ratings) {
