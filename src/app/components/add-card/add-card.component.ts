@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CardServiceService } from 'src/app/services/card-service.service';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 
 @Component({
@@ -10,7 +10,6 @@ import swal from 'sweetalert';
   templateUrl: './add-card.component.html',
   styleUrls: ['./add-card.component.css']
 })
-export class AddCardComponent implements OnInit {
   cardForm: FormGroup;
   rankRef: string;
   sum: any;
@@ -99,7 +98,7 @@ export class AddCardComponent implements OnInit {
     this.cardSevice.addcard(this.cardForm.value, this.cardForm.value.img).subscribe();
     this.cardForm.reset(); // Reset form values
     this.cardForm.get('img').setValue(null); // Reset file input
-    swal('Success!', 'Card added!', 'success');
+    // swal('Success!', 'Card added!', 'success');
   }
 
   async edit(){
@@ -109,7 +108,7 @@ export class AddCardComponent implements OnInit {
     this.cardSevice.editCard(this.cardForm.value, this.cardForm.value.img).subscribe();
     this.cardForm.reset(); // Reset form values
     this.cardForm.get('img').setValue(null); // Reset file input
-    swal('Success!', 'Card added!', 'success');
+    // swal('Success!', 'Card added!', 'success');
   }
 
   
