@@ -51,26 +51,42 @@ isLoggedIn(): boolean {
   return false;
 }
 
-logout() {
-  // Use SweetAlert to display logout confirmation
-  swal({
-    title: 'Logout Confirmation',
-    text: 'Are you sure you want to log out?',
-    icon: 'warning',
-    buttons: ['Cancel', 'Yes, Logout'],
-    dangerMode: true,
-  }).then((confirmed) => {
-    if (confirmed) {
-      // User confirmed logout, clear the JWT token and display logout success message
-      sessionStorage.removeItem('jwt');
-      this.admin = false;
-      this.user = false;
+// logout() {
+//   // Use SweetAlert to display logout confirmation
+//   swal({
+//     title: 'Logout Confirmation',
+//     text: 'Are you sure you want to log out?',
+//     icon: 'warning',
+//     buttons: ['Cancel', 'Yes, Logout'],
+//     dangerMode: true,
+//   }).then((confirmed) => {
+//     if (confirmed) {
+//       // User confirmed logout, clear the JWT token and display logout success message
+//       sessionStorage.removeItem('jwt');
+//       this.admin = false;
+//       this.user = false;
     
-      // Use SweetAlert to display logout success message
-      swal('Logged Out!', 'You have been successfully logged out.', 'success');
-      this.router.navigate(['/login']);
-    }
-  });
+//       // Use SweetAlert to display logout success message
+//       swal('Logged Out!', 'You have been successfully logged out.', 'success');
+//       this.router.navigate(['/login']);
+//     }
+//   });
+// }
+logout() {
+  // Use standard alert to display logout confirmation
+  const confirmed = window.confirm('Are you sure you want to log out?');
+
+  if (confirmed) {
+    // User confirmed logout, clear the JWT token and display logout success message
+    sessionStorage.removeItem('jwt');
+    this.admin = false;
+    this.user = false;
+
+    // Use standard alert to display logout success message
+    window.alert('Logged Out! You have been successfully logged out.');
+
+    this.router.navigate(['/login']);
+  }
 }
 
 
