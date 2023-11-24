@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import jwt_decode from 'jwt-decode';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root',
@@ -27,11 +27,11 @@ export class AuthGuard implements CanActivate {
       if (decodedToken.role === 'admin') {
         return true;
       } else {
-        swal('Sorry!', 'You need to be logged in as an admin', 'error');
+        // swal('Sorry!', 'You need to be logged in as an admin', 'error');
         return this.router.parseUrl('/login');
       }
     } else {
-      swal('Sorry!', 'You need to be logged in', 'error');
+      // swal('Sorry!', 'You need to be logged in', 'error');
       return this.router.parseUrl('/login');
     }
   }
