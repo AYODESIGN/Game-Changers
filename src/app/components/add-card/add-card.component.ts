@@ -10,6 +10,9 @@ import { CardServiceService } from 'src/app/services/card-service.service';
   templateUrl: './add-card.component.html',
   styleUrls: ['./add-card.component.css']
 })
+
+  export class AddCardComponent implements OnInit {
+  
   cardForm: FormGroup;
   rankRef: string;
   sum: any;
